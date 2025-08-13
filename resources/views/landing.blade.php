@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>إدارة الأعمال - نظام إدارة شامل</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+@extends('layouts.app')
+
+@section('title', 'إدارة الأعمال - نظام إدارة شامل')
+
+@section('styles')
+<script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         @keyframes blob {
@@ -72,8 +70,10 @@
         
 
     </style>
-</head>
-<body class="bg-gradient-to-br from-secondary-50 to-primary-50 min-h-screen">
+@endsection
+
+@section('content')
+<div class="bg-gradient-to-br from-secondary-50 to-primary-50 min-h-screen">
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <div class="bg-white/90 backdrop-blur-xl border-b border-white/20 shadow-lg">
