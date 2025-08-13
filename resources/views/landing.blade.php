@@ -37,6 +37,37 @@
         #mobileMenu.show {
             transform: translateY(0);
         }
+        
+        /* Range Slider Styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            background: linear-gradient(to right, #3B82F6, #8B5CF6);
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #3B82F6;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #3B82F6;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-secondary-50 to-primary-50 min-h-screen">
@@ -294,6 +325,144 @@
         </div>
     </section>
 
+    <!-- Before/After Interactive Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-secondary-900 mb-4">قبل وبعد استخدام نظامنا</h2>
+                <p class="text-xl text-secondary-600">شاهد الفرق بنفسك</p>
+            </div>
+            
+            <div class="relative bg-gradient-to-r from-danger-50 to-success-50 rounded-3xl p-8 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Before -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-danger-200">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-danger-500 rounded-xl flex items-center justify-center">
+                                <i data-lucide="x-circle" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-danger-700">بدون نظامنا</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 text-danger-600">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <span>ضياع 40% من الوقت في المهام الروتينية</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-danger-600">
+                                <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                                <span>أخطاء بشرية متكررة</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-danger-600">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                                <span>تقارير يدوية معقدة</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-danger-600">
+                                <i data-lucide="trending-down" class="w-5 h-5"></i>
+                                <span>انخفاض الإنتاجية</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- After -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-success-200">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-success-500 rounded-xl flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-success-700">مع نظامنا</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 text-success-600">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                                <span>توفير 70% من الوقت</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-success-600">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                <span>دقة 99.9% في العمليات</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-success-600">
+                                <i data-lucide="bar-chart" class="w-5 h-5"></i>
+                                <span>تقارير تلقائية فورية</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-success-600">
+                                <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                <span>زيادة الإنتاجية 300%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VS Badge -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center shadow-xl">
+                        <span class="text-white font-bold text-lg">VS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section class="py-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-secondary-900 mb-4">رحلة التحول الرقمي</h2>
+                <p class="text-xl text-secondary-600">من الفكرة إلى النجاح في 4 خطوات</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform -translate-y-1/2 hidden md:block"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                                <i data-lucide="user-plus" class="w-10 h-10 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">التسجيل</h3>
+                        <p class="text-secondary-600">إنشاء حساب مجاني في دقائق</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-success-500 to-success-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                                <i data-lucide="settings" class="w-10 h-10 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">الإعداد</h3>
+                        <p class="text-secondary-600">تخصيص النظام حسب احتياجاتك</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-warning-500 to-warning-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                                <i data-lucide="upload" class="w-10 h-10 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">نقل البيانات</h3>
+                        <p class="text-secondary-600">استيراد بياناتك الحالية بسهولة</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                                <i data-lucide="rocket" class="w-10 h-10 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary-900 mb-3">الانطلاق</h3>
+                        <p class="text-secondary-600">ابدأ في إدارة أعمالك بكفاءة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Demo Section -->
     <section id="demo" class="py-20 bg-secondary-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-secondary-900 via-primary-900 to-secondary-900 opacity-90"></div>
@@ -314,6 +483,153 @@
                 </div>
                 <div class="text-center mt-6">
                     <p class="text-white/90 text-lg">شاهد كيف يمكن لنظامنا تحويل إدارة أعمالك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Carousel -->
+    <section class="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-secondary-900 mb-4">ماذا يقول عملاؤنا</h2>
+                <p class="text-xl text-secondary-600">قصص نجاح حقيقية</p>
+            </div>
+            
+            <div class="relative overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out" id="testimonialSlider">
+                    <!-- Testimonial 1 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
+                            <div class="flex items-center gap-6 mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">أ</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-secondary-900">أحمد محمد</h3>
+                                    <p class="text-secondary-600">مدير عام - شركة النور</p>
+                                    <div class="flex gap-1 mt-2">
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-secondary-700 leading-relaxed italic">
+                                "نظام إدارة الأعمال غيّر طريقة عملنا بالكامل. وفرنا 70% من الوقت وزاد أرباحنا بنسبة 250%. لا أستطيع تخيل العمل بدونه الآن."
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
+                            <div class="flex items-center gap-6 mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-success-500 to-success-600 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">ف</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-secondary-900">فاطمة الزهراء</h3>
+                                    <p class="text-secondary-600">مديرة العمليات - مجموعة الفجر</p>
+                                    <div class="flex gap-1 mt-2">
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-secondary-700 leading-relaxed italic">
+                                "بفضل هذا النظام، أصبحت إدارة فريق عمل من 200 موظف أمراً سهلاً. التقارير التلقائية والذكاء الاصطناعي غيّرا قراراتنا."
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
+                            <div class="flex items-center gap-6 mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-warning-500 to-warning-600 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">م</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-secondary-900">محمد العلي</h3>
+                                    <p class="text-secondary-600">مدير المشاريع - شركة البناء</p>
+                                    <div class="flex gap-1 mt-2">
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="text-xl text-secondary-700 leading-relaxed italic">
+                                "النظام ساعدنا في إدارة 15 مشروع بناء في نفس الوقت. تتبع الميزانيات والجداول الزمنية أصبح أمراً في غاية البساطة."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button class="w-3 h-3 rounded-full bg-primary-500 testimonial-dot active" onclick="showTestimonial(0)"></button>
+                    <button class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot" onclick="showTestimonial(1)"></button>
+                    <button class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot" onclick="showTestimonial(2)"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Pricing Calculator -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-secondary-900 mb-4">حاسبة التوفير</h2>
+                <p class="text-xl text-secondary-600">اكتشف كم ستوفر مع نظامنا</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary-900 mb-6">أخبرنا عن شركتك</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-secondary-700 mb-2">عدد الموظفين</label>
+                                <input type="range" id="employeeCount" min="10" max="1000" value="50" class="w-full" oninput="calculateSavings()">
+                                <span id="employeeDisplay" class="text-primary-600 font-semibold">50 موظف</span>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-secondary-700 mb-2">عدد المشاريع شهرياً</label>
+                                <input type="range" id="projectCount" min="5" max="100" value="20" class="w-full" oninput="calculateSavings()">
+                                <span id="projectDisplay" class="text-primary-600 font-semibold">20 مشروع</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-2xl font-bold text-secondary-900 mb-6">توفيراتك الشهرية</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary-600">توفير الوقت:</span>
+                                <span id="timeSavings" class="text-2xl font-bold text-success-600">120 ساعة</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary-600">توفير مالي:</span>
+                                <span id="moneySavings" class="text-2xl font-bold text-primary-600">45,000 ل.س</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary-600">زيادة الإنتاجية:</span>
+                                <span id="productivityGain" class="text-2xl font-bold text-warning-600">250%</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-gradient-to-r from-success-50 to-primary-50 rounded-xl">
+                            <p class="text-center text-success-700 font-semibold">توفير سنوي: <span id="yearlyTotal" class="text-2xl">540,000 ل.س</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -501,6 +817,57 @@
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('show');
         };
+        
+        // Testimonial Slider
+        let currentTestimonial = 0;
+        window.showTestimonial = function(index) {
+            const slider = document.getElementById('testimonialSlider');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            
+            currentTestimonial = index;
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active', 'bg-primary-500');
+                    dot.classList.remove('bg-secondary-300');
+                } else {
+                    dot.classList.remove('active', 'bg-primary-500');
+                    dot.classList.add('bg-secondary-300');
+                }
+            });
+        };
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            const nextIndex = (currentTestimonial + 1) % 3;
+            showTestimonial(nextIndex);
+        }, 5000);
+        
+        // Savings Calculator
+        window.calculateSavings = function() {
+            const employees = document.getElementById('employeeCount').value;
+            const projects = document.getElementById('projectCount').value;
+            
+            // Update displays
+            document.getElementById('employeeDisplay').textContent = employees + ' موظف';
+            document.getElementById('projectDisplay').textContent = projects + ' مشروع';
+            
+            // Calculate savings (example formulas)
+            const timeSavings = Math.round(employees * 2.4 + projects * 1.5);
+            const moneySavings = Math.round(employees * 900 + projects * 450);
+            const productivity = Math.min(150 + Math.round(employees * 2), 400);
+            const yearlyTotal = moneySavings * 12;
+            
+            // Update results
+            document.getElementById('timeSavings').textContent = timeSavings + ' ساعة';
+            document.getElementById('moneySavings').textContent = moneySavings.toLocaleString() + ' ل.س';
+            document.getElementById('productivityGain').textContent = productivity + '%';
+            document.getElementById('yearlyTotal').textContent = yearlyTotal.toLocaleString() + ' ل.س';
+        };
+        
+        // Initialize calculator
+        calculateSavings();
     </script>
 </body>
 </html>
