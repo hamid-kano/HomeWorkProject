@@ -27,29 +27,102 @@
         .animation-delay-1000 { animation-delay: 1s; }
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
+        
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        #mobileMenu.show {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-secondary-50 to-primary-50 min-h-screen">
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
-                        <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="bg-white/90 backdrop-blur-xl border-b border-white/20 shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-3 group cursor-pointer">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="briefcase" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold bg-gradient-to-r from-secondary-900 to-primary-600 bg-clip-text text-transparent">إدارة الأعمال</h1>
+                            <p class="text-xs text-secondary-500 font-medium">نظام إدارة متكامل</p>
+                        </div>
                     </div>
-                    <h1 class="text-2xl font-bold text-secondary-900">إدارة الأعمال</h1>
+                    
+                    <!-- Navigation Menu -->
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <a href="#features" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors relative group">
+                            الميزات
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all group-hover:w-full"></span>
+                        </a>
+                        <a href="#demo" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors relative group">
+                            عرض توضيحي
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all group-hover:w-full"></span>
+                        </a>
+                        <a href="#contact" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors relative group">
+                            اتصل بنا
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all group-hover:w-full"></span>
+                        </a>
+                    </nav>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex items-center gap-4">
+                        <button class="hidden md:flex items-center gap-2 text-secondary-700 hover:text-primary-600 font-medium transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span class="text-sm">+963 11 123 4567</span>
+                        </button>
+                        
+                        <a href="/login" class="group bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-3 rounded-2xl font-semibold transition-all hover:scale-105 hover:shadow-xl flex items-center gap-2">
+                            <i data-lucide="log-in" class="w-4 h-4 group-hover:animate-pulse"></i>
+                            <span class="hidden sm:inline">تسجيل الدخول</span>
+                            <span class="sm:hidden">دخول</span>
+                        </a>
+                        
+                        <!-- Mobile Menu Button -->
+                        <button class="lg:hidden p-2 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors" onclick="toggleMobileMenu()">
+                            <i data-lucide="menu" class="w-6 h-6"></i>
+                        </button>
+                    </div>
                 </div>
-                <a href="/login" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
-                    <i data-lucide="log-in" class="w-4 h-4"></i>
-                    تسجيل الدخول
-                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden bg-white/95 backdrop-blur-xl border-b border-white/20 shadow-xl transform -translate-y-full transition-transform duration-300">
+            <div class="max-w-7xl mx-auto px-4 py-6">
+                <nav class="flex flex-col gap-4">
+                    <a href="#features" class="flex items-center gap-3 text-secondary-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-primary-50 transition-colors" onclick="toggleMobileMenu()">
+                        <i data-lucide="star" class="w-5 h-5"></i>
+                        الميزات
+                    </a>
+                    <a href="#demo" class="flex items-center gap-3 text-secondary-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-primary-50 transition-colors" onclick="toggleMobileMenu()">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        عرض توضيحي
+                    </a>
+                    <a href="#contact" class="flex items-center gap-3 text-secondary-700 hover:text-primary-600 font-medium py-3 px-4 rounded-xl hover:bg-primary-50 transition-colors" onclick="toggleMobileMenu()">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        اتصل بنا
+                    </a>
+                    <div class="border-t border-secondary-200 pt-4 mt-4">
+                        <div class="flex items-center gap-2 text-secondary-600 mb-4">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span class="text-sm">+963 11 123 4567</span>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-32 overflow-hidden">
+    <section class="relative pt-40 pb-32 overflow-hidden">
         <!-- Animated Background -->
         <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
             <div class="absolute top-20 left-20 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -290,6 +363,53 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary-500 to-secondary-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">جاهز لبدء رحلتك؟</h2>
+            <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+                انضم إلى آلاف الشركات التي تثق في نظامنا لإدارة أعمالها
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <a href="/login" class="group bg-white text-primary-600 hover:bg-primary-50 px-10 py-5 rounded-2xl font-bold text-lg transition-all hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3">
+                    <i data-lucide="rocket" class="w-6 h-6 group-hover:animate-bounce"></i>
+                    ابدأ الآن مجاناً
+                </a>
+                <a href="tel:+963111234567" class="group border-2 border-white text-white hover:bg-white hover:text-primary-600 px-10 py-5 rounded-2xl font-bold text-lg transition-all hover:scale-105 flex items-center justify-center gap-3">
+                    <i data-lucide="phone" class="w-6 h-6 group-hover:animate-pulse"></i>
+                    اتصل بنا
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">البريد الإلكتروني</h3>
+                    <p class="text-white/80">info@business-management.sy</p>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="phone" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">هاتف</h3>
+                    <p class="text-white/80">+963 11 123 4567</p>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">العنوان</h3>
+                    <p class="text-white/80">دمشق - سوريا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-secondary-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -341,17 +461,46 @@
             
             counters.forEach(counter => observer.observe(counter));
             
+            // Navbar scroll effect
+            let lastScrollY = window.scrollY;
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+                
+                // Hide/show navbar on scroll
+                if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+            
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
         });
+        
+        // Mobile menu toggle
+        window.toggleMobileMenu = function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('show');
+        };
     </script>
 </body>
 </html>
