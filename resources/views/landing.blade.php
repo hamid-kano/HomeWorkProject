@@ -496,89 +496,74 @@
                 <p class="text-xl text-secondary-600">قصص نجاح حقيقية</p>
             </div>
             
-            <div class="relative overflow-hidden">
-                <div class="flex transition-transform duration-500 ease-in-out" id="testimonialSlider">
-                    <!-- Testimonial 1 -->
-                    <div class="w-full flex-shrink-0 px-4">
-                        <div class="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                            <div class="flex items-center gap-6 mb-6">
-                                <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
-                                    <span class="text-white text-2xl font-bold">أ</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-secondary-900">أحمد محمد</h3>
-                                    <p class="text-secondary-600">مدير عام - شركة النور</p>
-                                    <div class="flex gap-1 mt-2">
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                    </div>
-                                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="bg-white rounded-3xl p-6 shadow-xl h-full">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-white text-xl font-bold">أ</span>
                             </div>
-                            <blockquote class="text-xl text-secondary-700 leading-relaxed italic">
-                                "نظام إدارة الأعمال غيّر طريقة عملنا بالكامل. وفرنا 70% من الوقت وزاد أرباحنا بنسبة 250%. لا أستطيع تخيل العمل بدونه الآن."
-                            </blockquote>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="w-full flex-shrink-0 px-4">
-                        <div class="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                            <div class="flex items-center gap-6 mb-6">
-                                <div class="w-20 h-20 bg-gradient-to-br from-success-500 to-success-600 rounded-full flex items-center justify-center">
-                                    <span class="text-white text-2xl font-bold">ف</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-secondary-900">فاطمة الزهراء</h3>
-                                    <p class="text-secondary-600">مديرة العمليات - مجموعة الفجر</p>
-                                    <div class="flex gap-1 mt-2">
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                    </div>
-                                </div>
+                            <h3 class="text-lg font-bold text-secondary-900">أحمد محمد</h3>
+                            <p class="text-sm text-secondary-600">مدير عام - شركة النور</p>
+                            <div class="flex justify-center gap-1 mt-2">
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
                             </div>
-                            <blockquote class="text-xl text-secondary-700 leading-relaxed italic">
-                                "بفضل هذا النظام، أصبحت إدارة فريق عمل من 200 موظف أمراً سهلاً. التقارير التلقائية والذكاء الاصطناعي غيّرا قراراتنا."
-                            </blockquote>
                         </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="w-full flex-shrink-0 px-4">
-                        <div class="bg-white rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                            <div class="flex items-center gap-6 mb-6">
-                                <div class="w-20 h-20 bg-gradient-to-br from-warning-500 to-warning-600 rounded-full flex items-center justify-center">
-                                    <span class="text-white text-2xl font-bold">م</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-secondary-900">محمد العلي</h3>
-                                    <p class="text-secondary-600">مدير المشاريع - شركة البناء</p>
-                                    <div class="flex gap-1 mt-2">
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                        <i data-lucide="star" class="w-5 h-5 text-warning-500 fill-current"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <blockquote class="text-xl text-secondary-700 leading-relaxed italic">
-                                "النظام ساعدنا في إدارة 15 مشروع بناء في نفس الوقت. تتبع الميزانيات والجداول الزمنية أصبح أمراً في غاية البساطة."
-                            </blockquote>
-                        </div>
+                        <blockquote class="text-secondary-700 text-center italic">
+                            "نظام إدارة الأعمال غيّر طريقة عملنا بالكامل. وفرنا 70% من الوقت."
+                        </blockquote>
                     </div>
                 </div>
                 
-                <!-- Navigation Dots -->
-                <div class="flex justify-center gap-3 mt-8">
-                    <button class="w-3 h-3 rounded-full bg-primary-500 testimonial-dot active" onclick="showTestimonial(0)"></button>
-                    <button class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot" onclick="showTestimonial(1)"></button>
-                    <button class="w-3 h-3 rounded-full bg-secondary-300 testimonial-dot" onclick="showTestimonial(2)"></button>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="bg-white rounded-3xl p-6 shadow-xl h-full">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-success-500 to-success-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-white text-xl font-bold">ف</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-secondary-900">فاطمة الزهراء</h3>
+                            <p class="text-sm text-secondary-600">مديرة العمليات - مجموعة الفجر</p>
+                            <div class="flex justify-center gap-1 mt-2">
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                            </div>
+                        </div>
+                        <blockquote class="text-secondary-700 text-center italic">
+                            "إدارة فريق عمل من 200 موظف أصبح أمراً سهلاً. التقارير التلقائية غيّرت قراراتنا."
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="bg-white rounded-3xl p-6 shadow-xl h-full">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-warning-500 to-warning-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-white text-xl font-bold">م</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-secondary-900">محمد العلي</h3>
+                            <p class="text-sm text-secondary-600">مدير المشاريع - شركة البناء</p>
+                            <div class="flex justify-center gap-1 mt-2">
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
+                            </div>
+                        </div>
+                        <blockquote class="text-secondary-700 text-center italic">
+                            "إدارة 15 مشروع بناء في نفس الوقت. تتبع الميزانيات أصبح في غاية البساطة."
+                        </blockquote>
+                    </div>
                 </div>
             </div>
         </div>
@@ -818,31 +803,12 @@
             mobileMenu.classList.toggle('show');
         };
         
-        // Testimonial Slider
-        let currentTestimonial = 0;
-        window.showTestimonial = function(index) {
-            const slider = document.getElementById('testimonialSlider');
-            const dots = document.querySelectorAll('.testimonial-dot');
-            
-            currentTestimonial = index;
-            slider.style.transform = `translateX(-${index * 100}%)`;
-            
-            dots.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.add('active', 'bg-primary-500');
-                    dot.classList.remove('bg-secondary-300');
-                } else {
-                    dot.classList.remove('active', 'bg-primary-500');
-                    dot.classList.add('bg-secondary-300');
-                }
-            });
-        };
-        
-        // Auto-rotate testimonials
-        setInterval(() => {
-            const nextIndex = (currentTestimonial + 1) % 3;
-            showTestimonial(nextIndex);
-        }, 5000);
+        // Testimonial cards animation
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        testimonialCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            card.classList.add('animate-fade-in-up');
+        });
         
         // Savings Calculator
         window.calculateSavings = function() {
