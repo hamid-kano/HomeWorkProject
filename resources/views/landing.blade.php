@@ -74,11 +74,6 @@
                     
                     <!-- CTA Buttons -->
                     <div class="flex items-center gap-4">
-                        <button class="hidden md:flex items-center gap-2 text-secondary-700 hover:text-primary-600 font-medium transition-colors">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <span class="text-sm">+963 11 123 4567</span>
-                        </button>
-                        
                         <a href="/login" class="group bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 py-3 rounded-2xl font-semibold transition-all hover:scale-105 hover:shadow-xl flex items-center gap-2">
                             <i data-lucide="log-in" class="w-4 h-4 group-hover:animate-pulse"></i>
                             <span class="hidden sm:inline">تسجيل الدخول</span>
