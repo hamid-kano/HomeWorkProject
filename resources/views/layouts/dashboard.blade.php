@@ -9,7 +9,7 @@
 </head>
 <body class="bg-secondary-50">
     <!-- Sidebar -->
-    <div class="fixed inset-y-0 right-0 z-50 w-72 bg-gradient-to-b from-secondary-900 to-secondary-800 shadow-2xl transform lg:translate-x-0 -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar">
+    <div class="fixed inset-y-0 right-0 z-50 w-72 bg-gradient-to-b from-secondary-900 to-secondary-800 shadow-2xl transform translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
         <!-- Logo -->
         <div class="flex items-center justify-center h-20 border-b border-secondary-700">
             <div class="flex items-center gap-3">
@@ -23,29 +23,37 @@
         <!-- Navigation -->
         <nav class="mt-8 px-4">
             <div class="space-y-2">
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                <a href="/dashboard" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
                     <i data-lucide="layout-dashboard" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
                     <span class="font-medium">لوحة التحكم</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                <a href="/projects" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                    <i data-lucide="clipboard-list" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">دراسة المشاريع</span>
+                </a>
+                <a href="/legal" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                    <i data-lucide="scale" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">القسم القانوني</span>
+                </a>
+                <a href="/hr" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
                     <i data-lucide="users" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium">العملاء</span>
+                    <span class="font-medium">الموارد البشرية</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
-                    <i data-lucide="package" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium">المنتجات</span>
+                <a href="/technical" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                    <i data-lucide="wrench" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">القسم التقني</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
-                    <i data-lucide="shopping-cart" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium">المبيعات</span>
+                <a href="/warehouses" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                    <i data-lucide="warehouse" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">المستودعات</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
-                    <i data-lucide="bar-chart-3" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium">التقارير</span>
+                <a href="/sales-points" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                    <i data-lucide="store" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">نقاط البيع</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
-                    <i data-lucide="settings" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium">الإعدادات</span>
+                <a href="/vehicles" class="flex items-center gap-3 px-4 py-3 text-secondary-300 hover:bg-secondary-700/50 hover:text-white rounded-xl transition-all duration-200 group">
+                    <i data-lucide="truck" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium">متابعة الآليات</span>
                 </a>
             </div>
         </nav>
@@ -103,33 +111,33 @@
     </div>
 
     <!-- Mobile Sidebar Overlay -->
-    <div class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden hidden" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <div class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden hidden" id="sidebar-overlay" onclick="closeSidebar()"></div>
 
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebar-overlay');
             
-            if (sidebar.classList.contains('-translate-x-full')) {
-                sidebar.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
+            if (window.innerWidth < 1024) {
+                if (sidebar.classList.contains('translate-x-full')) {
+                    sidebar.classList.remove('translate-x-full');
+                    overlay.classList.remove('hidden');
+                } else {
+                    sidebar.classList.add('translate-x-full');
+                    overlay.classList.add('hidden');
+                }
             }
         }
         
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(e) {
+        function closeSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebar-overlay');
-            const menuButton = e.target.closest('[onclick="toggleSidebar()"]');
             
-            if (!sidebar.contains(e.target) && !menuButton && window.innerWidth < 1024) {
-                sidebar.classList.add('-translate-x-full');
+            if (window.innerWidth < 1024) {
+                sidebar.classList.add('translate-x-full');
                 overlay.classList.add('hidden');
             }
-        });
+        }
         
         // Handle window resize
         window.addEventListener('resize', function() {
@@ -137,15 +145,24 @@
             const overlay = document.getElementById('sidebar-overlay');
             
             if (window.innerWidth >= 1024) {
-                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.remove('translate-x-full');
                 overlay.classList.add('hidden');
             } else {
-                sidebar.classList.add('-translate-x-full');
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
             }
         });
         
-        // Initialize Lucide icons
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            if (window.innerWidth < 1024) {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+            
             lucide.createIcons();
         });
     </script>
