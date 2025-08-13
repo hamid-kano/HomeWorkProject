@@ -40,10 +40,10 @@ Route::post('/hr', [App\Http\Controllers\EmployeeController::class, 'store']);
 Route::put('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'update']);
 Route::delete('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'destroy']);
 
-Route::get('/legal', function () {
-    if (!session('user')) return redirect('/login');
-    return view('legal.index');
-});
+Route::get('/legal', [App\Http\Controllers\LegalController::class, 'index']);
+Route::post('/legal', [App\Http\Controllers\LegalController::class, 'store']);
+Route::put('/legal/{case}', [App\Http\Controllers\LegalController::class, 'update']);
+Route::delete('/legal/{case}', [App\Http\Controllers\LegalController::class, 'destroy']);
 
 Route::get('/technical', function () {
     if (!session('user')) return redirect('/login');
