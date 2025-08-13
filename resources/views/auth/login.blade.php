@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>تسجيل الدخول - إدارة الأعمال</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-</head>
-<body class="bg-gradient-to-br from-primary-50 to-secondary-100 min-h-screen flex items-center justify-center p-4">
+@extends('layouts.app')
+
+@section('title', 'تسجيل الدخول - إدارة الأعمال')
+
+@section('styles')
+<script src="https://cdn.tailwindcss.com"></script>
+@endsection
+
+@section('content')
+<div class="bg-gradient-to-br from-primary-50 to-secondary-100 min-h-screen flex items-center justify-center p-4">
     <div class="w-full max-w-md">
         <!-- Logo -->
         <div class="text-center mb-8">
@@ -78,11 +78,13 @@
             </a>
         </div>
     </div>
+</div>
+@endsection
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-        });
-    </script>
-</body>
-</html>
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
+    });
+</script>
+@endsection

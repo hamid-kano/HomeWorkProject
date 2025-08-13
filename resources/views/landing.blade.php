@@ -650,8 +650,11 @@
             </div>
         </div>
     </footer>
+</div>
+@endsection
 
-    <script>
+@section('scripts')
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
             
@@ -754,5 +757,4 @@
         // Initialize calculator
         calculateSavings();
     </script>
-</body>
-</html>
+@endsection
