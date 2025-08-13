@@ -27,7 +27,7 @@ class EmployeeController extends Controller
             'total_salary' => Employee::where('status', 'نشط')->sum('salary')
         ];
         
-        return view('hr.index', compact('employees', 'stats'));
+        return view('employees.index', compact('employees', 'stats'));
     }
     
     public function store(Request $request)
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
             'status' => 'required|string'
         ]);
         
-        $employee->update($request->all());
+        $employee->update($request->only(['name', 'email', 'phone', 'department', 'position', 'salary', 'status']));
         return redirect()->back()->with('success', 'تم تحديث بيانات الموظف بنجاح');
     }
     

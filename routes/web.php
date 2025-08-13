@@ -35,10 +35,11 @@ Route::post('/projects', [App\Http\Controllers\ProjectController::class, 'store'
 Route::put('/projects/{project}', [App\Http\Controllers\ProjectController::class, 'update']);
 Route::delete('/projects/{project}', [App\Http\Controllers\ProjectController::class, 'destroy']);
 
-Route::get('/hr', [App\Http\Controllers\EmployeeController::class, 'index']);
-Route::post('/hr', [App\Http\Controllers\EmployeeController::class, 'store']);
-Route::put('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'update']);
-Route::delete('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'destroy']);
+
+Route::get('/employees', [App\Http\Controllers\EmployeeController::class, 'index']);
+Route::post('/employees', [App\Http\Controllers\EmployeeController::class, 'store']);
+Route::put('/employees/{employee}', [App\Http\Controllers\EmployeeController::class, 'update']);
+Route::delete('/employees/{employee}', [App\Http\Controllers\EmployeeController::class, 'destroy']);
 
 Route::get('/legal', [App\Http\Controllers\LegalController::class, 'index']);
 Route::post('/legal', [App\Http\Controllers\LegalController::class, 'store']);

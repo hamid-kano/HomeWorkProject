@@ -112,7 +112,7 @@
         <div class="bg-white rounded-2xl shadow-xl w-full max-w-md">
             <div class="p-6">
                 <h3 class="text-lg font-semibold text-secondary-900 mb-4">إضافة موظف جديد</h3>
-                <form method="POST" action="/hr">
+                <form method="POST" action="/employees">
                     @csrf
                     <div class="space-y-4">
                         <input type="text" name="name" placeholder="اسم الموظف" required class="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500">
@@ -219,7 +219,7 @@ function closeAddModal() {
 }
 
 function openEditModal(id, name, email, phone, department, position, salary, status) {
-    document.getElementById('editForm').action = '/hr/' + id;
+    document.getElementById('editForm').action = '/employees/' + id;
     document.getElementById('editName').value = name;
     document.getElementById('editEmail').value = email;
     document.getElementById('editPhone').value = phone;
@@ -235,7 +235,7 @@ function closeEditModal() {
 }
 
 function openDeleteModal(id, name) {
-    document.getElementById('deleteForm').action = '/hr/' + id;
+    document.getElementById('deleteForm').action = '/employees/' + id;
     document.getElementById('deleteEmployeeName').textContent = name;
     document.getElementById('deleteModal').classList.remove('hidden');
 }
