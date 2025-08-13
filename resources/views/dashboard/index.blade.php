@@ -122,26 +122,34 @@
 </div>
 
 <!-- Quick Actions -->
-<div class="bg-white rounded-lg shadow-sm p-6">
-    <h3 class="text-lg font-semibold text-secondary-800 mb-4">إجراءات سريعة</h3>
+<div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20">
+    <h3 class="text-lg font-semibold text-secondary-800 mb-6">إجراءات سريعة</h3>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <button class="flex flex-col items-center p-4 bg-primary-50 hover:bg-primary-100 rounded-lg transition-colors">
-            <span class="text-2xl mb-2">➕</span>
+        <button class="flex flex-col items-center p-6 bg-primary-50 hover:bg-primary-100 rounded-xl transition-all duration-200 hover:scale-105 group">
+            <div class="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <i data-lucide="plus" class="w-6 h-6 text-white"></i>
+            </div>
             <span class="text-sm font-medium text-primary-700">إضافة منتج</span>
         </button>
         
-        <button class="flex flex-col items-center p-4 bg-success-50 hover:bg-success-100 rounded-lg transition-colors">
-            <span class="text-2xl mb-2">👤</span>
+        <button class="flex flex-col items-center p-6 bg-success-50 hover:bg-success-100 rounded-xl transition-all duration-200 hover:scale-105 group">
+            <div class="w-12 h-12 bg-success-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <i data-lucide="user-plus" class="w-6 h-6 text-white"></i>
+            </div>
             <span class="text-sm font-medium text-success-700">عميل جديد</span>
         </button>
         
-        <button class="flex flex-col items-center p-4 bg-warning-50 hover:bg-warning-100 rounded-lg transition-colors">
-            <span class="text-2xl mb-2">📊</span>
+        <button class="flex flex-col items-center p-6 bg-warning-50 hover:bg-warning-100 rounded-xl transition-all duration-200 hover:scale-105 group">
+            <div class="w-12 h-12 bg-warning-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+            </div>
             <span class="text-sm font-medium text-warning-700">تقرير مبيعات</span>
         </button>
         
-        <button class="flex flex-col items-center p-4 bg-secondary-50 hover:bg-secondary-100 rounded-lg transition-colors">
-            <span class="text-2xl mb-2">⚙️</span>
+        <button class="flex flex-col items-center p-6 bg-secondary-50 hover:bg-secondary-100 rounded-xl transition-all duration-200 hover:scale-105 group">
+            <div class="w-12 h-12 bg-secondary-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <i data-lucide="settings" class="w-6 h-6 text-white"></i>
+            </div>
             <span class="text-sm font-medium text-secondary-700">الإعدادات</span>
         </button>
     </div>
