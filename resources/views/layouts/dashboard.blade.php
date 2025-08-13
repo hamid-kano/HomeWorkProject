@@ -106,6 +106,7 @@
 
         <!-- Page Content -->
         <main class="p-4 lg:p-8 min-h-screen bg-gradient-to-br from-secondary-50 to-secondary-100">
+            @include('components.alert')
             @yield('content')
         </main>
     </div>

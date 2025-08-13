@@ -29,35 +29,64 @@ class ProjectController extends Controller
     
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'budget' => 'required|numeric',
-            'status' => 'required|string',
-            'location' => 'required|string'
-        ]);
-        
-        Project::create($request->all());
-        return redirect()->back()->with('success', 'تم إضافة المشروع بنجاح');
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'budget' => 'required|numeric|min:0',
+                'status' => 'required|string',
+                'location' => 'required|string'
+            ], [
+                'name.required' => 'اسم المشروع مطلوب',
+                'description.required' => 'وصف المشروع مطلوب',
+                'budget.required' => 'الميزانية مطلوبة',
+                'budget.numeric' => 'الميزانية يجب أن تكون رقم',
+                'budget.min' => 'الميزانية يجب أن تكون أكبر من صفر',
+                'status.required' => 'حالة المشروع مطلوبة',
+                'location.required' => 'موقع المشروع مطلوب'
+            ]);
+            
+            Project::create($request->all());
+            return redirect()->back()->with('success', 'تم إضافة المشروع "' . $request->name . '" بنجاح');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'حدث خطأ أثناء إضافة المشروع. يرجى المحاولة مرة أخرى.');
+        }
     }
     
     public function update(Request $request, Project $project)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'budget' => 'required|numeric',
-            'status' => 'required|string',
-            'location' => 'required|string'
-        ]);
-        
-        $project->update($request->all());
-        return redirect()->back()->with('success', 'تم تحديث المشروع بنجاح');
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'budget' => 'required|numeric|min:0',
+                'status' => 'required|string',
+                'location' => 'required|string'
+            ], [
+                'name.required' => 'اسم المشروع مطلوب',
+                'description.required' => 'وصف المشروع مطلوب',
+                'budget.required' => 'الميزانية مطلوبة',
+                'budget.numeric' => 'الميزانية يجب أن تكون رقم',
+                'budget.min' => 'الميزانية يجب أن تكون أكبر من صفر',
+                'status.required' => 'حالة المشروع مطلوبة',
+                'location.required' => 'موقع المشروع مطلوب'
+            ]);
+            
+            $project->update($request->all());
+            return redirect()->back()->with('success', 'تم تحديث المشروع "' . $project->name . '" بنجاح');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'حدث خطأ أثناء تحديث المشروع. يرجى المحاولة مرة أخرى.');
+        }
     }
     
     public function destroy(Project $project)
     {
-        $project->delete();
-        return redirect()->back()->with('success', 'تم حذف المشروع بنجاح');
+        try {
+            $projectName = $project->name;
+            $project->delete();
+            return redirect()->back()->with('success', 'تم حذف المشروع "' . $projectName . '" بنجاح');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'حدث خطأ أثناء حذف المشروع. يرجى المحاولة مرة أخرى.');
+        }
     }
 }
