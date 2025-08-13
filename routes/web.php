@@ -13,3 +13,7 @@ Route::get('/test-tailwind', function () {
 Route::get('/colors', function () {
     return view('colors-demo');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
