@@ -46,10 +46,10 @@ Route::post('/legal', [App\Http\Controllers\LegalController::class, 'store']);
 Route::put('/legal/{case}', [App\Http\Controllers\LegalController::class, 'update']);
 Route::delete('/legal/{case}', [App\Http\Controllers\LegalController::class, 'destroy']);
 
-Route::get('/technical', function () {
-    if (!session('user')) return redirect('/login');
-    return view('technical.index');
-});
+Route::get('/technical', [App\Http\Controllers\TechnicalController::class, 'index']);
+Route::post('/technical', [App\Http\Controllers\TechnicalController::class, 'store']);
+Route::put('/technical/{equipment}', [App\Http\Controllers\TechnicalController::class, 'update']);
+Route::delete('/technical/{equipment}', [App\Http\Controllers\TechnicalController::class, 'destroy']);
 
 Route::get('/warehouses', function () {
     if (!session('user')) return redirect('/login');

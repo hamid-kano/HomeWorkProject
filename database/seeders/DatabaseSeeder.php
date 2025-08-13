@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ProjectSeeder::class,
             EmployeeSeeder::class,
             LegalCaseSeeder::class,
+            TechnicalEquipmentSeeder::class,
         ]);
 
         User::factory()->create([
