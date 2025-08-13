@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Employee;
+use Illuminate\Http\Request;
+
+class EmployeeController extends Controller
+{
+    public function index(Request $request)
+    {
+        $query = Employee::query();
+        
+        if ($request->search) {
+            $query->where('name', 'like', '%' . $request->search . '%')
+                  ->orWhere('email', 'like', '%' . $request->search . '%')
+                  ->orWhere('department', 'like', '%' . $request->search . '%');
+        }
+        
+        $employees = $query->latest()->get();
+        $stats = [
+            'total' => Employee::count(),
+            'active' => Employee::where('status', 'نشط')->count(),
+            'departments' => Employee::distinct('department')->count('department'),
+            'total_salary' => Employee::where('status', 'نشط')->sum('salary')
+        ];
+        
+        return view('hr.index', compact('employees', 'stats'));
+    }
+    
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:employees',
+            'phone' => 'required|string',
+            'department' => 'required|string',
+            'position' => 'required|string',
+            'salary' => 'required|numeric',
+            'hire_date' => 'required|date'
+        ]);
+        
+        Employee::create(array_merge($request->all(), ['status' => 'نشط']));
+        return redirect()->back()->with('success', 'تم إضافة الموظف بنجاح');
+    }
+    
+    public function update(Request $request, Employee $employee)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:employees,email,' . $employee->id,
+            'phone' => 'required|string',
+            'department' => 'required|string',
+            'position' => 'required|string',
+            'salary' => 'required|numeric',
+            'status' => 'required|string'
+        ]);
+        
+        $employee->update($request->all());
+        return redirect()->back()->with('success', 'تم تحديث بيانات الموظف بنجاح');
+    }
+    
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+        return redirect()->back()->with('success', 'تم حذف الموظف بنجاح');
+    }
+}

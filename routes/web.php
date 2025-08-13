@@ -11,16 +11,18 @@ Route::get('/dashboard', function () {
 });
 
 // أقسام الشركة
-Route::get('/projects', function () {
-    return view('projects.index');
-});
+Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'index']);
+Route::post('/projects', [App\Http\Controllers\ProjectController::class, 'store']);
+Route::put('/projects/{project}', [App\Http\Controllers\ProjectController::class, 'update']);
+Route::delete('/projects/{project}', [App\Http\Controllers\ProjectController::class, 'destroy']);
+
+Route::get('/hr', [App\Http\Controllers\EmployeeController::class, 'index']);
+Route::post('/hr', [App\Http\Controllers\EmployeeController::class, 'store']);
+Route::put('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'update']);
+Route::delete('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'destroy']);
 
 Route::get('/legal', function () {
     return view('legal.index');
-});
-
-Route::get('/hr', function () {
-    return view('hr.index');
 });
 
 Route::get('/technical', function () {

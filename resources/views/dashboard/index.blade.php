@@ -10,7 +10,7 @@
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-secondary-600 text-sm font-medium">إجمالي الإيرادات</p>
-                <p class="text-3xl font-bold text-secondary-900 mt-2">2,450,000 ر.س</p>
+                <p class="text-3xl font-bold text-secondary-900 mt-2">2,450,000 ل.س</p>
                 <div class="flex items-center mt-2">
                     <i data-lucide="trending-up" class="w-4 h-4 text-success-600 mr-1"></i>
                     <p class="text-success-600 text-sm font-medium">+15% من الشهر الماضي</p>
