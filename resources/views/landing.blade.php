@@ -6,6 +6,7 @@
     <title>إدارة الأعمال - نظام إدارة شامل</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
     <style>
         @keyframes blob {
             0% { transform: translate(0px, 0px) scale(1); }
@@ -68,6 +69,8 @@
             border: none;
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
+        
+
     </style>
 </head>
 <body class="bg-gradient-to-br from-secondary-50 to-primary-50 min-h-screen">
@@ -488,86 +491,7 @@
         </div>
     </section>
 
-    <!-- Customer Testimonials Carousel -->
-    <section class="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-secondary-900 mb-4">ماذا يقول عملاؤنا</h2>
-                <p class="text-xl text-secondary-600">قصص نجاح حقيقية</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="bg-white rounded-3xl p-6 shadow-xl h-full">
-                        <div class="text-center mb-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                                <span class="text-white text-xl font-bold">أ</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-secondary-900">أحمد محمد</h3>
-                            <p class="text-sm text-secondary-600">مدير عام - شركة النور</p>
-                            <div class="flex justify-center gap-1 mt-2">
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                            </div>
-                        </div>
-                        <blockquote class="text-secondary-700 text-center italic">
-                            "نظام إدارة الأعمال غيّر طريقة عملنا بالكامل. وفرنا 70% من الوقت."
-                        </blockquote>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="bg-white rounded-3xl p-6 shadow-xl h-full">
-                        <div class="text-center mb-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-success-500 to-success-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                                <span class="text-white text-xl font-bold">ف</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-secondary-900">فاطمة الزهراء</h3>
-                            <p class="text-sm text-secondary-600">مديرة العمليات - مجموعة الفجر</p>
-                            <div class="flex justify-center gap-1 mt-2">
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                            </div>
-                        </div>
-                        <blockquote class="text-secondary-700 text-center italic">
-                            "إدارة فريق عمل من 200 موظف أصبح أمراً سهلاً. التقارير التلقائية غيّرت قراراتنا."
-                        </blockquote>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="bg-white rounded-3xl p-6 shadow-xl h-full">
-                        <div class="text-center mb-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-warning-500 to-warning-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                                <span class="text-white text-xl font-bold">م</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-secondary-900">محمد العلي</h3>
-                            <p class="text-sm text-secondary-600">مدير المشاريع - شركة البناء</p>
-                            <div class="flex justify-center gap-1 mt-2">
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-warning-500 fill-current"></i>
-                            </div>
-                        </div>
-                        <blockquote class="text-secondary-700 text-center italic">
-                            "إدارة 15 مشروع بناء في نفس الوقت. تتبع الميزانيات أصبح في غاية البساطة."
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Interactive Pricing Calculator -->
     <section class="py-20 bg-white">
@@ -803,12 +727,7 @@
             mobileMenu.classList.toggle('show');
         };
         
-        // Testimonial cards animation
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        testimonialCards.forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.2}s`;
-            card.classList.add('animate-fade-in-up');
-        });
+
         
         // Savings Calculator
         window.calculateSavings = function() {
