@@ -92,12 +92,14 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary-900">{{ $project->location }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <button onclick="openEditModal({{ $project->id }}, '{{ $project->name }}', '{{ $project->description }}', {{ $project->budget }}, '{{ $project->status }}', '{{ $project->location }}')" class="text-primary-600 hover:text-primary-900 mr-3">
-                            <i data-lucide="edit" class="w-4 h-4"></i>
-                        </button>
-                        <button onclick="openDeleteModal({{ $project->id }}, '{{ $project->name }}')" class="text-danger-600 hover:text-danger-900">
-                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                        </button>
+                        <div class="flex items-center gap-2">
+                            <button onclick="openEditModal({{ $project->id }}, '{{ $project->name }}', '{{ $project->description }}', {{ $project->budget }}, '{{ $project->status }}', '{{ $project->location }}')" class="inline-flex items-center justify-center w-8 h-8 text-primary-600 bg-primary-50 hover:bg-primary-100 hover:text-primary-700 rounded-lg transition-all duration-200 hover:scale-110" title="تعديل">
+                                <i data-lucide="edit-3" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="openDeleteModal({{ $project->id }}, '{{ $project->name }}')" class="inline-flex items-center justify-center w-8 h-8 text-danger-600 bg-danger-50 hover:bg-danger-100 hover:text-danger-700 rounded-lg transition-all duration-200 hover:scale-110" title="حذف">
+                                <i data-lucide="trash" class="w-4 h-4"></i>
+                            </button>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
