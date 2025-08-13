@@ -302,13 +302,18 @@
             <p class="text-xl text-secondary-300 mb-12">تجربة تفاعلية لاستكشاف قوة النظام</p>
             
             <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto">
-                <div class="aspect-video bg-gradient-to-br from-primary-500 to-secondary-600 rounded-2xl flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform cursor-pointer">
-                            <i data-lucide="play" class="w-12 h-12 text-white"></i>
-                        </div>
-                        <p class="text-white text-lg font-semibold">شاهد العرض التوضيحي</p>
-                    </div>
+                <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube.com/embed/ATrdmS2f-JI" 
+                        title="نظام إدارة الأعمال - عرض توضيحي" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="text-center mt-6">
+                    <p class="text-white/90 text-lg">شاهد كيف يمكن لنظامنا تحويل إدارة أعمالك</p>
                 </div>
             </div>
         </div>
