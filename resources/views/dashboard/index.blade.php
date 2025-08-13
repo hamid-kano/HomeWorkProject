@@ -9,30 +9,14 @@
     <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 hover:shadow-xl transition-all duration-300">
         <div class="flex items-center justify-between">
             <div>
-                <p class="text-secondary-600 text-sm font-medium">إجمالي الإيرادات</p>
-                <p class="text-3xl font-bold text-secondary-900 mt-2">2,450,000 ل.س</p>
+                <p class="text-secondary-600 text-sm font-medium">إجمالي المشاريع</p>
+                <p class="text-3xl font-bold text-secondary-900 mt-2">{{ \App\Models\Project::count() }}</p>
                 <div class="flex items-center mt-2">
                     <i data-lucide="trending-up" class="w-4 h-4 text-success-600 mr-1"></i>
-                    <p class="text-success-600 text-sm font-medium">+15% من الشهر الماضي</p>
+                    <p class="text-success-600 text-sm font-medium">{{ \App\Models\Project::where('status', 'قيد التنفيذ')->count() }} قيد التنفيذ</p>
                 </div>
             </div>
             <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
-                <i data-lucide="dollar-sign" class="w-6 h-6 text-white"></i>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 hover:shadow-xl transition-all duration-300">
-        <div class="flex items-center justify-between">
-            <div>
-                <p class="text-secondary-600 text-sm font-medium">المشاريع النشطة</p>
-                <p class="text-3xl font-bold text-secondary-900 mt-2">12</p>
-                <div class="flex items-center mt-2">
-                    <i data-lucide="activity" class="w-4 h-4 text-success-600 mr-1"></i>
-                    <p class="text-success-600 text-sm font-medium">3 مشاريع جديدة</p>
-                </div>
-            </div>
-            <div class="w-12 h-12 bg-gradient-to-br from-success-500 to-success-600 rounded-xl flex items-center justify-center">
                 <i data-lucide="clipboard-list" class="w-6 h-6 text-white"></i>
             </div>
         </div>
@@ -41,14 +25,14 @@
     <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 hover:shadow-xl transition-all duration-300">
         <div class="flex items-center justify-between">
             <div>
-                <p class="text-secondary-600 text-sm font-medium">عدد الموظفين</p>
-                <p class="text-3xl font-bold text-secondary-900 mt-2">156</p>
+                <p class="text-secondary-600 text-sm font-medium">إجمالي الموظفين</p>
+                <p class="text-3xl font-bold text-secondary-900 mt-2">{{ \App\Models\Employee::count() }}</p>
                 <div class="flex items-center mt-2">
-                    <i data-lucide="user-plus" class="w-4 h-4 text-warning-600 mr-1"></i>
-                    <p class="text-warning-600 text-sm font-medium">8 موظفين جدد</p>
+                    <i data-lucide="user-check" class="w-4 h-4 text-success-600 mr-1"></i>
+                    <p class="text-success-600 text-sm font-medium">{{ \App\Models\Employee::where('status', 'نشط')->count() }} نشط</p>
                 </div>
             </div>
-            <div class="w-12 h-12 bg-gradient-to-br from-warning-500 to-warning-600 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-gradient-to-br from-success-500 to-success-600 rounded-xl flex items-center justify-center">
                 <i data-lucide="users" class="w-6 h-6 text-white"></i>
             </div>
         </div>
@@ -57,15 +41,31 @@
     <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 hover:shadow-xl transition-all duration-300">
         <div class="flex items-center justify-between">
             <div>
-                <p class="text-secondary-600 text-sm font-medium">عدد الآليات</p>
-                <p class="text-3xl font-bold text-secondary-900 mt-2">23</p>
+                <p class="text-secondary-600 text-sm font-medium">إجمالي الميزانية</p>
+                <p class="text-3xl font-bold text-secondary-900 mt-2">{{ number_format(\App\Models\Project::sum('budget')) }} ل.س</p>
                 <div class="flex items-center mt-2">
-                    <i data-lucide="wrench" class="w-4 h-4 text-danger-600 mr-1"></i>
-                    <p class="text-danger-600 text-sm font-medium">5 تحتاج صيانة</p>
+                    <i data-lucide="trending-up" class="w-4 h-4 text-warning-600 mr-1"></i>
+                    <p class="text-warning-600 text-sm font-medium">ميزانية المشاريع</p>
+                </div>
+            </div>
+            <div class="w-12 h-12 bg-gradient-to-br from-warning-500 to-warning-600 rounded-xl flex items-center justify-center">
+                <i data-lucide="dollar-sign" class="w-6 h-6 text-white"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 hover:shadow-xl transition-all duration-300">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-secondary-600 text-sm font-medium">إجمالي الرواتب</p>
+                <p class="text-3xl font-bold text-secondary-900 mt-2">{{ number_format(\App\Models\Employee::where('status', 'نشط')->sum('salary')) }} ل.س</p>
+                <div class="flex items-center mt-2">
+                    <i data-lucide="banknote" class="w-4 h-4 text-danger-600 mr-1"></i>
+                    <p class="text-danger-600 text-sm font-medium">رواتب شهرية</p>
                 </div>
             </div>
             <div class="w-12 h-12 bg-gradient-to-br from-danger-500 to-danger-600 rounded-xl flex items-center justify-center">
-                <i data-lucide="truck" class="w-6 h-6 text-white"></i>
+                <i data-lucide="banknote" class="w-6 h-6 text-white"></i>
             </div>
         </div>
     </div>
@@ -81,42 +81,28 @@
         </div>
     </div>
 
-    <!-- Recent Orders -->
-    <div class="bg-white rounded-lg shadow-sm p-6">
-        <h3 class="text-lg font-semibold text-secondary-800 mb-4">الطلبات الأخيرة</h3>
+    <!-- Recent Projects -->
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20">
+        <h3 class="text-lg font-semibold text-secondary-800 mb-4">المشاريع الأخيرة</h3>
         <div class="space-y-4">
+            @foreach(\App\Models\Project::latest()->take(3)->get() as $project)
             <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
                 <div>
-                    <p class="font-medium text-secondary-800">طلب #1234</p>
-                    <p class="text-sm text-secondary-600">أحمد محمد</p>
+                    <p class="font-medium text-secondary-800">{{ $project->name }}</p>
+                    <p class="text-sm text-secondary-600">{{ $project->location }}</p>
                 </div>
                 <div class="text-left">
-                    <p class="font-medium text-secondary-800">1,250 ر.س</p>
-                    <span class="inline-block px-2 py-1 text-xs font-medium bg-success-100 text-success-800 rounded-full">مكتمل</span>
+                    <p class="font-medium text-secondary-800">{{ number_format($project->budget) }} ل.س</p>
+                    <span class="inline-block px-2 py-1 text-xs font-medium 
+                        @if($project->status == 'مكتمل') bg-success-100 text-success-800
+                        @elseif($project->status == 'قيد التنفيذ') bg-primary-100 text-primary-800
+                        @elseif($project->status == 'دراسة') bg-warning-100 text-warning-800
+                        @else bg-secondary-100 text-secondary-800 @endif rounded-full">
+                        {{ $project->status }}
+                    </span>
                 </div>
             </div>
-            
-            <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
-                <div>
-                    <p class="font-medium text-secondary-800">طلب #1235</p>
-                    <p class="text-sm text-secondary-600">فاطمة أحمد</p>
-                </div>
-                <div class="text-left">
-                    <p class="font-medium text-secondary-800">890 ر.س</p>
-                    <span class="inline-block px-2 py-1 text-xs font-medium bg-warning-100 text-warning-800 rounded-full">قيد المعالجة</span>
-                </div>
-            </div>
-            
-            <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
-                <div>
-                    <p class="font-medium text-secondary-800">طلب #1236</p>
-                    <p class="text-sm text-secondary-600">محمد علي</p>
-                </div>
-                <div class="text-left">
-                    <p class="font-medium text-secondary-800">2,100 ر.س</p>
-                    <span class="inline-block px-2 py-1 text-xs font-medium bg-primary-100 text-primary-800 rounded-full">جديد</span>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

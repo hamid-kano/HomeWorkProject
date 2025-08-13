@@ -21,6 +21,7 @@ Route::post('/hr', [App\Http\Controllers\EmployeeController::class, 'store']);
 Route::put('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'update']);
 Route::delete('/hr/{employee}', [App\Http\Controllers\EmployeeController::class, 'destroy']);
 
+// باقي الأقسام - قابلة للتطوير لاحقاً
 Route::get('/legal', function () {
     return view('legal.index');
 });
