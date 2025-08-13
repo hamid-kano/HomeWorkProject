@@ -1,4 +1,15 @@
-# دليل تشغيل المشروع
+<div align="center">
+  <h1>🏠 HomeWork Project</h1>
+  <p><strong>مشروع Laravel للواجبات المنزلية</strong></p>
+  
+  ![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat-square&logo=php&logoColor=white)
+  ![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+  ![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat-square&logo=mysql&logoColor=white)
+</div>
+
+---
+
+# 📋 دليل تشغيل المشروع
 
 ## المتطلبات الأساسية
 
