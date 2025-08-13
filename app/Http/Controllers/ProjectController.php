@@ -9,6 +9,8 @@ class ProjectController extends Controller
 {
     public function index(Request $request)
     {
+        if (!session('user')) return redirect('/login');
+        
         $query = Project::query();
         
         if ($request->search) {

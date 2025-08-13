@@ -88,8 +88,8 @@
                     </button>
                     
                     <!-- User Menu -->
-                    <div class="relative">
-                        <button class="flex items-center gap-2 lg:gap-3 p-2 text-secondary-700 hover:bg-secondary-100 rounded-xl transition-colors">
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 lg:gap-3 p-2 text-secondary-700">
                             <div class="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg">
                                 <span class="text-white text-sm font-bold">أ</span>
                             </div>
@@ -97,8 +97,10 @@
                                 <p class="font-semibold text-secondary-900">أحمد محمد</p>
                                 <p class="text-xs text-secondary-500">مدير عام</p>
                             </div>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-secondary-400 hidden sm:block"></i>
-                        </button>
+                        </div>
+                        <a href="/logout" class="p-2 text-secondary-500 hover:text-danger-600 hover:bg-danger-50 rounded-xl transition-colors" title="تسجيل الخروج">
+                            <i data-lucide="log-out" class="w-5 h-5"></i>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,8 @@ class EmployeeController extends Controller
 {
     public function index(Request $request)
     {
+        if (!session('user')) return redirect('/login');
+        
         $query = Employee::query();
         
         if ($request->search) {
